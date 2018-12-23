@@ -1,0 +1,18 @@
+<h1> Lecteur Flux RSS </h1>
+
+<%= form_tag "/links", method: "post" do %>
+    <label> Titre : </label>
+    <input type="text" name="title" placeholder="Ajouter votre Titre" />
+    <label> URL : </label>
+    <input type="text" name="url" placeholder="Ajouter votre URL" />
+    <input type="submit" value="Ajouter le flux" />
+<% end %>
+
+<h3> Les Fluxs RSS </h3>
+
+<% @les_links.each do |link| %>
+    <article> 
+        <h1><%= link.title %></h1>    
+        <p><%= link.url %></p>
+    </article>
+<% end %>
